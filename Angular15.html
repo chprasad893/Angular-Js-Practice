@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="app15" ng-cloak>
+<head>
+  <title>Angular Js Practice 15</title>
+
+  <style>
+
+ [ng\:cloak],[ng-cloak],.ng-cloak{
+   display:none;
+ }
+
+  </style>
+</head>
+<body>
+
+  <div ng-controller="mainCtrl">
+
+     <button ng-click="getData()">Get Data</button>
+     <br><br>
+
+     {{players}}
+
+   <ul>
+     <li ng-repeat="player in players">
+       {{player.year+" Under "+player.under + " Values "}}
+
+     </li>
+   </ul>
+
+   Translate :
+   <input type="text" ng-model="wordsToTranslate"/>
+   <br><br>
+   <button ng-click="translate()">Translate</button>
+   <br><br>
+   {{translated}}
+
+  </div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="js/exam15.js"></script>
+</html>

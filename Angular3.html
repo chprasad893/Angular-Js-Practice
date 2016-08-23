@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="app3" ng-cloak>
+<head>
+  <title>Angular Js Practice 3</title>
+  <style>
+  [ng\:cloak], [ng-cloak], .ng-cloak{
+    display:none;
+  }
+  </style>
+</head>
+<body>
+
+   <div id="groceryList" ng-controller="gListCtrl">
+
+     <h3 class="ListTitle">{{groceries.length}} Groceries to GET</h3>
+
+     <ol style="margin: 0 0 -15px 0;">
+       <li>{{groceries[0].item}}</li>
+     </ol>
+
+     <ol start="2">
+       <li ng-repeat="grocery in groceries" ng-if="$index > 0">
+         {{grocery.item}} {{$index}}
+       </li>
+     </ol>
+
+     <table>
+       <tr ng-repeat-start="grocery in groceries">
+         <td>
+           {{grocery.item}}
+         </td>
+       </tr>
+       <tr ng-repeat-end>
+         <td>
+           {{grocery.purchased}}
+         </td>
+       </tr>
+     </table>
+
+     <label>Change 1st Iteam : </label>
+     <input ng-model="groceries[0].item" />
+
+    <h3>Grocery List</h3>
+     <div ng-include="'olgrocerylist.html'"></div>
+
+     <label>
+       <input type="checkbox" ng-model="showList">
+       Show Unordered List
+     </label>
+
+     <ng-include src="getList()"></ng-include>
+
+     <label>Type Number (1 to 4):
+       <input type="text" ng-model="someNumber"/>
+     </label>
+     <div ng-switch="someNumber">
+       <p ng-switch-when="1">You entered 1</p>
+       <p ng-switch-when="2">You entered 2</p>
+       <p ng-switch-when="3">You entered 3</p>
+       <p ng-switch-when="4">You entered 4</p>
+       <p ng-switch-default>Not Following Directions</p>
+     </div>
+
+   </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="js\exam3.js"></script>
+</html>

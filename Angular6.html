@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="app6" ng-cloak>
+<head>
+  <title>Angular Js Practice 6</title>
+  <style>
+     [ng\:cloak],[ng-cloak],.ng-cloak{
+       display:none;
+     }
+  </style>
+</head>
+<body>
+
+  <div ng-controller="heroCtrl">
+
+    <label>Hero to Search For: </label>
+    <input type="text" ng-model="heroName"/>
+    <br><br>
+    <button ng-click="getHeroData()">Submit</button>
+    <br><br>
+
+     {{heroData}} <br>
+
+  </div>
+
+   <div ng-controller="heroCtrl">
+
+        <label>Hero Name: </label>
+        <input type="text" ng-model="heroName"/><br><br>
+        <label>Real Name: </label>
+        <input type="text" ng-model="realName"/><br><br>
+        <button ng-click="addHeroData(realName,heroName)">Add Hero</button>
+
+   </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="js\exam6.js"></script>
+</html>

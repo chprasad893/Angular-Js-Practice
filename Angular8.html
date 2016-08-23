@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="app8" ng-cloak>
+<head>
+  <title>Angular Js Practice 8</title>
+  <style>
+     [ng\:cloak],[ng-cloak],.ng-cloak{
+       display:none;
+     }
+  </style>
+</head>
+<body>
+
+  <div ng-controller="mainCtrl">
+
+   <label>Make UpperCase: </label>
+   <input type="text" ng-model="name">
+   <p>Uppercase: {{name|uppercase}}</p>
+
+   <p>Lowercase: {{name|lowercase}}</p>
+
+   <label>Currency Filter: </label>
+   <input type="text" ng-model="money">
+   <p>Currency : {{money|currency}}</p>
+
+   <ul>
+     <li ng-repeat="student in student.gpas | filter: studentName| orderBy:'-gpa'">
+       {{'Name: ' + student.name + ' : GPA: ' + student.gpa}}
+
+     </li>
+   </ul>
+
+   <label>Number Filter: </label>
+   <input type="text" ng-model="numVal">
+   <p>Default: {{numVal | number}}</p>
+   <p>No Fractions: {{numVal | number:0}}</p>
+   <p>Negative 4 Decimal: {{-numVal | number:4}}</p>
+
+
+   <p>Date 1: {{currDate| date: 'medium'}}</p>
+   <p>Date 2: {{currDate| date: "MM/dd/yyyy 'at' h:ma"}}</p>
+
+
+   <p>Default: {{randomStr}}</p>
+   <p>10 Characters: {{randomStr|limitTo:10}}</p>
+   <p>
+     <ul>
+       <li ng-repeat="item in randArray| limitTo:3">{{item}}</li>
+     </ul>
+   </p>
+
+    <p>
+      <ul>
+        <li ng-repeat="item in weather">{{item.day + ":"}} {{item.rain | raining}}</li>
+      </ul>
+    </p>
+  </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="js/exam8.js"></script>
+<script src="js/filters.js"></script>
+</html>

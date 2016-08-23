@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="app9" ng-cloak>
+<head>
+  <title>Angular Js Practice 9</title>
+  <style>
+     [ng\:cloak],[ng-cloak],.ng-cloak{
+       display:none;
+     }
+     .thick{
+       font-weight: bold;
+     }
+  </style>
+</head>
+<body>
+
+    <div ng-controller="mainCtrl">
+
+      <ul jql-directive>
+        <li id="barry">Barry Bonds</li>
+         <ul>
+           <li>AVG : .298</li>
+           <li>HR : 762</li>
+           <li>OBP : .444</li>
+         </ul>
+         <li id="hank">Hank Aaron</li>
+          <ul>
+            <li>AVG : .305</li>
+            <li>HR : 755</li>
+            <li>OBP : .374</li>
+          </ul>
+          <li>Babe Ruth</li>
+           <ul>
+             <li>AVG : .342</li>
+             <li>HR : 714</li>
+             <li>OBP : .474</li>
+           </ul>
+      </ul>
+
+      <h4>Children in List</h4>
+      <span id=childrenList></span><br><br>
+
+      Barry's Number: <span id="barrysNumber"></span><br><br>
+      Is Hank Bold: <span id="hankBold"></span><br><br>
+      Barry's ID :  <span id="barryID"></span><br><br>
+       <button ng-click="unBold()">Toggle Bold</button>
+    </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="js/exam9.js"></script>
+</html>
